@@ -1,28 +1,38 @@
-**crypto-arbitrage/**
-├── **docs/**
-│   └── overview.md           # Théorie du pair trading, formules, sources
-├── **data/**
-│   ├── raw/                  # CSV bruts ou extraction des prix
-│   └── processed/            # Séries temporelles nettoyées, spreads, z-scores
-├── **notebooks/**
-│   ├── 01_pair_selection.ipynb
-│   ├── 02_strategy_backtest.ipynb
-│   └── 03_walk_forward.ipynb
-├── **src/**
-│   ├── data_prep.py          # Chargement, nettoyage, calcul de spread
-│   ├── stats_tests.py        # Corrélation, cointégration, z-score, variance
-│   ├── **strategies/**
-│   │   ├── mean_reversion.py
-│   │   ├── momentum_pair.py
-│   │   └── stochastic_stress.py
-│   └── sizing.py             # Volatility parity position sizing
-├── **backtest/**
-│   ├── run_backtest.py
-│   └── monte_carlo.py
-├── **results/**              # Backtest outputs, equity curves, CSVs
-├── **tests/**                # Tests unitaires pour chaque module src/
-├── **benchmarks/**           # Tableaux de bord et graphiques de synthèse
-├── requirements.txt
-├── LICENSE
-└── README.md
+**🚀 Crypto-Arbitrage Project Overview**
 
+The **Crypto-Arbitrage** repository implements a complete framework for developing, testing, and deploying statistical arbitrage (“pair-trading”) strategies on cryptocurrency markets. Its key components are:
+
+* **📄 Theory & Documentation (`docs/`)**
+  A concise write-up (`overview.md`) explaining the mathematical foundations of pair trading: correlation vs. cointegration tests, spread computation, z-scores, and variance formulas.
+
+* **📊 Data Pipeline (`data/`)**
+
+  * `raw/`: ingest raw OHLC price feeds (CSV or API dumps)
+  * `processed/`: cleaned time-series with computed spreads, rolling stats, and normalized features
+
+* **📓 Exploratory Notebooks (`notebooks/`)**
+  Interactive analyses to:
+
+  1. 🔍 Select optimal cointegrated pairs
+  2. 📈 Backtest mean-reversion, momentum, and stochastic stress strategies
+  3. 🔄 Perform walk-forward simulations and sensitivity studies
+
+* **⚙️ Modular Strategy Code (`src/`)**
+
+  * `data_prep.py` & `stats_tests.py`: reusable functions for loading data, computing spreads, and running stat tests
+  * `strategies/`: self-contained modules (`mean_reversion.py`, `momentum_pair.py`, `stochastic_stress.py`)
+  * `sizing.py`: volatility-parity position sizing logic based on ATR
+
+* **🤖 Automated Backtests (`backtest/`)**
+  Scripts (`run_backtest.py`, `monte_carlo.py`) to launch large-scale simulations—Monte Carlo resampling, walk-forward analysis—producing equity curves and PnL distributions.
+
+* **🏆 Results & Benchmarks (`results/` & `benchmarks/`)**
+  Stored backtest outputs (CSV, pickle) and summary dashboards/plots to compare performance, drawdowns, and parameter sensitivities.
+
+* **✅ Quality & Maintenance**
+
+  * **Unit Tests (`tests/`)**: Validate data prep and strategy logic
+  * **Requirements (`requirements.txt`)**: Pin all dependencies for reproducibility
+  * **License (`LICENSE`)**: MIT license for open-source sharing
+
+Together, this structure delivers a robust, end-to-end toolkit for researching, validating, and refining crypto-pair arbitrage strategies—perfect for quants, developers, and trading analysts alike! 😊
