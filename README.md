@@ -1,6 +1,6 @@
 **🚀 Crypto-Arbitrage Project Overview**
 
-The **Crypto-Arbitrage** repository implements a complete framework for developing, testing, and deploying statistical arbitrage (“pair-trading”) strategies on cryptocurrency markets. Its key components are:
+The **Crypto-Arbitrage** repository implements a complete framework for developing, testing, and deploying statistical arbitrage (“pair-trading”) strategies on financial markets. Its key components are:
 
 * **📄 Theory & Documentation (`docs/`)**
   A concise write-up (`overview.md`) explaining the mathematical foundations of pair trading: correlation vs. cointegration tests, spread computation, z-scores, and variance formulas.
